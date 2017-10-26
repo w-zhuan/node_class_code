@@ -1,0 +1,35 @@
+<% include ../header.ejs%>
+    <% include ../nav.ejs%>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <% include ../sidebar.ejs%>
+                </div>
+                <div class="col-md-9">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>id</th>
+                            <th>栏目名</th>
+                            <th>操作</th>
+                        </tr>
+                        <% for(var i=0;i<categoryList.length;i++){
+                            var category = categoryList[i];
+                            %>
+                            <tr>
+                                <td>
+                                    <%=category.cid%>
+                                </td>
+                                <td>
+                                    <%=category.cname%>
+                                </td>
+                                <td>
+                                    <a href="/category/edit/<%=category.cid%>" class="btn btn-success btn-xs">编辑</a>
+                                    <a href="#" onclick="if(confirm('确定删除么',true)){location.href='/category/del/<%=category.cid%>'}" class="btn btn-danger btn-xs">删除</a>
+                                </td>
+                            </tr>
+                            <%}%>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <% include ../footer.ejs%>

@@ -1,0 +1,21 @@
+<% include ../header.ejs%>
+    <% include ../nav.ejs%>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <% include ../sidebar.ejs%>
+                </div>
+                <div class="col-md-9">
+                    <form action="/category/add" method="post">
+                        <div class="form-group">
+                            <label for="">栏目名称</label>
+                            <input type="text" name="cname" class="form-control" id="" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="form-control" id="" placeholder="">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <% include ../footer.ejs%>
